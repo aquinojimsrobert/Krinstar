@@ -1,20 +1,21 @@
-
 import { Routes, Route } from 'react-router-dom';
-import HomePage from './pages/HomePage';
-import LoginPage from './pages/LoginPage';
-import Dashboard from './pages/Dashboard';
-import NotFound from './pages/NotFound';
+import Home from './pages/home';
+import Login from './pages/login';
+import Dashboard from './pages/dashboard';
 import Navbar from './components/Navbar';
+// Optional: if NotFound.jsx exists
+// import NotFound from './pages/NotFound';
 
 function App() {
   return (
     <>
       <Navbar />
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="*" element={<NotFound />} />
+        {/* If you have NotFound.jsx file, uncomment the line below */}
+        {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>
     </>
   );
